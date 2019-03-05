@@ -42,8 +42,8 @@ def action_wrapper(hermes, intentMessage, conf):
     import subprocess
     command=intentMessage.slots.player.first().value
     #print(command) 
-    subprocess.call( "mpc "+command, shell=True)
-    hermes.publish_end_session(intentMessage.session_id,"")  
+    subprocess.call( command, shell=True)
+    hermes.publish_end_session(intentMessage.session_id,"Starte Script "+str{command})  
 
 
 if __name__ == "__main__":
