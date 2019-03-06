@@ -42,7 +42,7 @@ def action_wrapper(hermes, intentMessage, conf):
     import subprocess
     command=intentMessage.slots.player.first().value
     #print(command) 
-    subprocess.call( command, shell=True)
+    subprocess.call( "sudo"+command, shell=True)
     hermes.publish_end_session(intentMessage.session_id,"Starte Script "+str{command})  
 
 
